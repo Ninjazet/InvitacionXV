@@ -358,7 +358,7 @@ h1 {
     left: 0;
     width: 100%;
     padding: 15px 25px;
-    background: rgba(214, 51, 132, 0.95);
+    background: #000000;
     color: white;
     border-radius: 12px 12px 0 0;
     box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
