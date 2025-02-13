@@ -771,3 +771,12 @@ countdown-header {
     from { opacity: 0; transform: translateY(50px); }
     to { opacity: 1; transform: translateY(0); }
 }
+.decline-button {
+    background-color: var(--verde-oliva); /* Rojo suave */
+    color: white;
+    margin-top: 10px;
+}
+
+.decline-button:hover {
+    background-color: var(--verde-oliva);
+}
