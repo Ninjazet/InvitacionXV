@@ -143,6 +143,38 @@ function openRSVP() {
 function closeRSVP() {
     document.getElementById("rsvpModal").style.display = "none";
 }
+function declinarAsistencia() {
+    const nombre = document.getElementById("guestName").value;
+    const messageDiv = document.getElementById("formMessage");
+
+    // Validar que haya seleccionado un nombre válido
+    const invitadoValido = listaInvitados.find(invitado => invitado.nombre.toLowerCase() === nombre.toLowerCase());
+
+    if (!invitadoValido) {
+        messageDiv.textContent = "⚠️ Debes seleccionar tu nombre antes de rechazar la invitación.";
+        messageDiv.style.color = "#d63384";
+        return;
+    }
+
+    emailjs.send("service_wwoqk4u", "template_dienhrd", {
+        nombre: nombre,
+        invitados: "No asistirá"
+    }).then(() => {
+        messageDiv.textContent = `Lamentamos que no puedas asistir, ${nombre}.`;
+        messageDiv.style.color = "#d63384";
+
+        setTimeout(() => {
+            closeRSVP();
+            document.getElementById("rsvpForm").reset();
+            messageDiv.textContent = "";
+        }, 3000);
+    }).catch(error => {
+        messageDiv.textContent = "Error al enviar, intenta nuevamente.";
+        messageDiv.style.color = "#d63384";
+        console.error("EmailJS Error:", error);
+    });
+}
+
 
 // Cerrar modal al hacer clic fuera
 window.onclick = function(event) {
