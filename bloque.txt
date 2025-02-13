@@ -1,0 +1,22 @@
+   <!-- Hero Section -->
+    <section class="hero">
+        <img src="zaira.jpg" alt="Zaira" class="main-photo" loading="lazy">
+        <div class="title-section">
+            <h1>Zaira Fernanda</h1>
+            <p>5 de Febrero 2024 | San Nicolás</p>
+        </div>
+
+        <div class="countdown">
+            <div class="countdown-item">
+                <span id="days">00</span>
+                Días
+            </div>
+            <div class="countdown-item">
+                <span id="hours">00</span>
+                Horas
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">00</span>
+                Minutos
+            </div>
+        </div>

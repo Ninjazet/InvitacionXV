@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación 15 Años de Ximena Vallecillo</title>    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="styles.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" as="style">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="preload">
+    <!-- Animación inicial del sobre -->
+    <div class="envelope-overlay" id="envelopeOverlay">
+        <div class="envelope-container">
+            <img src="sobre2.png" alt="Sobre cerrado" class="envelope-img">
+            <div class="wax-seal" id="waxSeal">
+                <img src="sello2.png" alt="Sello de cera" class="seal-img">
+            </div>
+        </div>
+    </div>
+     <button id="musicButton" onclick="toggleMusic()">⏸️ Pausar</button>
+
+    
+ <div id="mainContent" style="display: none;">
+    
+ 
+<audio id="backgroundMusic" loop>
+    <source src="musica-fondo.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+</audio>
+
+    <!-- Hero Section -->
+    <section class="hero"  id="mainContent">
+        <div class="floral-border"></div>
+        <div class="content">
+            <h1>Mis XV Años</h1>
+            <h2>Ximena lopez Vallecillo</h2>
+            <p>15 de Marzo 2025</p>
+        </div>
+    </section>
+
+    <section class="countdown-section">
+        <div class="countdown">
+             <div class="countdown-footer">Faltan</div>
+            <div class="countdown-items">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+                   <div class="countdown-footer">para mi cumpleaños</div>
+        </div>
+    </section>
+
+
+    <!-- Detalles del Evento -->
+    <section class="section">
+        <h2 class="section-title animate">Detalles del Evento</h2>
+        <div class="details-grid">
+            <div class="detail-card animate">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Fecha y Hora</h3>
+                <p>15 de marzo 2025</p>
+                <p>06:00 PM</p>
+            </div>
+            <div class="detail-card animate">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Ubicación</h3>
+                <p>Casa de campo Tia karen</p>
+                <p>San Marcos Santa bárbara</p>
+            </div>
+        </div>
+    </section>
+   <!-- Dress Code -->
+   <section class="dress-code">
+    <h2 class="section-title animate">Código de vestimenta</h2>
+    <p class="animate" style="max-width: 800px; margin: 0 auto 20px; color: var(--verde-musgo);">
+        Vestimenta formal requerida<br>
+        <em style="font-size: 0.9em; color: var(--taupe);">
+        * Los tonos verdes en todas sus variaciones están reservados exclusivamente para la cumpleañera
+        </em>
+    </p>
+    <div class="color-palette">
+        <div class="color-box" style="background: var(--taupe)"></div>
+        <div class="color-box" style="background: var(--beige)"></div>
+        <div class="color-box" style="background: var(--blanco-hueso)"></div>
+        
+        <div class="color-box" style="background: #8B7355"></div>
+    </div>
+</section>
+
+<!-- Galería -->
+<section class="section">
+    <h2 class="section-title animate">Nuestra Galería</h2>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="foto1.jpg" loading="lazy" alt="Foto 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="foto2.jpg" loading="lazy" alt="Foto 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="foto3.jpg" loading="lazy" alt="Foto 3">
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<section class="nav-button">
+    <button class="nav-button" onclick="openRSVP()">
+        <i class="fas fa-envelope"></i> Confirmar Asistencia
+        <span class="hover-text">¡No faltes!</span>
+    </button>
+</section>
+    
+    
+    
+    <section id="regalos" class="section gift-section">
+    <h2 class="section-title">Regalos</h2>
+    <p class="gift-message">
+        "Tu compañía es el mejor regalo que puedo recibir en este día tan especial. Si te gustaría hacerme un regalo adicional, un detalle en efectivo sería algo que agradecería profundamente. Gracias de antemano por ser parte de esta celebración tan importante para mí."
+    </p>
+    <div class="envelope-rain"></div> <!-- Contenedor de la lluvia de sobres -->
+</section>
+    
+    
+    
+    
+</section>
+    <!-- Ubicación -->
+  <!-- Reemplazar la sección de ubicación con este código -->
+<section class="section location-section">
+    <h2 class="section-title animate">Ubicación</h2>
+    
+    <div class="navigation-buttons compact">
+        <a href="https://maps.app.goo.gl/HdzGtHGYS2S1pDkPA" class="map-button" target="_blank">
+            <div class="button-content">
+                <i class="fab fa-google"></i>
+                <div class="button-text">
+                    <span class="main-text">Ver en</span>
+                    <span class="sub-text">Google Maps</span>
+                </div>
+            </div>
+        </a>
+        
+        <a href="https://ul.waze.com/ul?place=ChIJ-frtDwCXZo8RmXGiAbYFxgA&ll=15.30028910%2C-88.41015040&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" class="map-button" target="_blank">
+            <div class="button-content">
+                <i class="fab fa-waze"></i>
+                <div class="button-text">
+                    <span class="main-text">Dirección con</span>
+                    <span class="sub-text">Waze</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="map-container elegant">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.2466743509426!2d-88.4101504!3d15.3002891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6697000fedfaf9%3A0xc605b601a27199!2sCasa%20de%20Campo%20Tia%20Karen!5e0!3m2!1ses-419!2shn!4v1707420000000!5m2!1ses-419!2shn"
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen 
+            loading="lazy"
+            aria-label="Mapa de ubicación del evento">
+        </iframe>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 XV Años Ximena Vallecillo</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+ </div>
+      <!-- RSVP Modal Actualizado -->
+
+<div class="rsvp-modal" id="rsvpModal">
+
+    <div class="rsvp-content">
+        <span class="close" onclick="closeRSVP()">&times;</span>
+        <h2>Confirmar Asistencia</h2>
+        <form id="rsvpForm">
+            
+            <div class="form-group">
+                <label>Escriba su nombre y seleccione:</label>
+                <input type="text" class="form-input" id="guestName" 
+                       placeholder="Escribe tu nombre" oninput="buscarInvitado()">
+                <ul id="sugerencias" class="sugerencias-list"></ul>
+            </div>
+            <div class="form-group">
+                <label>Número de Personas:</label>
+                <input type="number" class="form-input" id="guestCount" 
+                       min="1" oninput="validarAcompañantes()">
+                <p id="errorMessage" class="error-message"></p>
+                <div class="guest-alert" id="guestAlert">
+                    <div class="alert-content">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span id="alertText">Máximo permitido: <span id="maxGuest">0</span> Personas</span>
+    
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="nav-button" onclick="confirmarAsistencia()">
+                <i class="fas fa-paper-plane"></i> Confirmar
+            </button>
+        </form>
+        <div id="formMessage" class="form-message"></div>
+    </div>
+</div
+>
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+  
+  
+   <script>
+        // Animación de apertura del sobre
+        document.getElementById('waxSeal').addEventListener('click', () => {
+            gsap.to('.envelope-img', {
+                y: -100,
+                opacity: 0,
+                duration: 1,
+                ease: "power4.out"
+            });
+            
+            gsap.to('.seal-img', {
+                scale: 0,
+                duration: 0.8,
+                ease: "back.in(2)",
+                onComplete: () => {
+                    // Ocultar overlay del sobre
+                    document.getElementById('envelopeOverlay').style.display = 'none';
+                    
+                    // Mostrar contenido principal con animación
+                    document.getElementById('mainContent').style.display = 'block';
+                    gsap.from('#mainContent', {
+                        opacity: 0,
+                        y: 50,
+                        duration: 1.5,
+                        ease: "power4.out"
+                    });
+                    
+                    // Eliminar clase de preload
+                    document.body.classList.remove('preload');
+                }
+            });
+        });
+
+        // Tu código JavaScript actual aquí
+        // ... (countdown, swiper, etc) ...
+    </script>
+  
+</body>
+</html>
