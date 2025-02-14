@@ -780,3 +780,57 @@ countdown-header {
 .decline-button:hover {
     background-color: var(--verde-oliva);
 }
+
+
+
+
+
+.recommended-color-text {
+    font-size: 1.1rem;
+    color: var(--verde-oliva);
+    margin: 15px 0;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.recommended-color-text::before,
+.recommended-color-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background: var(--taupe);
+}
+
+.recommended-color-text::before {
+    left: -40px;
+}
+
+.recommended-color-text::after {
+    right: -40px;
+}
+
+@media (max-width: 768px) {
+    .recommended-color-text {
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+    
+    .recommended-color-text::before,
+    .recommended-color-text::after {
+        width: 20px;
+    }
+    
+    .recommended-color-text::before {
+        left: -30px;
+    }
+    
+    .recommended-color-text::after {
+        right: -30px;
+    }
+}
