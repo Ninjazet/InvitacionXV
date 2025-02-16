@@ -220,19 +220,33 @@
                        placeholder="Escribe tu nombre" oninput="buscarInvitado()">
                 <ul id="sugerencias" class="sugerencias-list"></ul>
             </div>
-            <div class="form-group">
-                <label>Número de Personas:</label>
-                <input type="number" class="form-input" id="guestCount" 
-                       min="1" oninput="validarAcompañantes()">
-                <p id="errorMessage" class="error-message"></p>
-                <div class="guest-alert" id="guestAlert">
-                    <div class="alert-content">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span id="alertText">Máximo permitido: <span id="maxGuest">0</span> Personas</span>
+           <div class="form-group">
+    <label for="guestCount">Número de Personas:</label>
+    <input type="number" 
+           class="form-input" 
+           id="guestCount" 
+           name="guestCount"
+           min="1" 
+           max="10" <!-- Valor temporal, se actualizará con JS -->
+           placeholder="Ej: 2"
+           title="Número de personas que asistirán contigo"
+           aria-describedby="errorMessage guestAlert"
+           required
+           oninput="validarAcompañantes()">
     
-                    </div>
-                </div>
-            </div>
+    <div class="guest-alert" id="guestAlert" role="alert" aria-live="assertive">
+        <div class="alert-content">
+            <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+            <span id="alertText">
+                Máximo permitido: 
+                <span id="maxGuest" aria-live="polite">0</span> personas
+            </span>
+        </div>
+    </div>
+    
+    <p id="errorMessage" class="error-message" aria-live="polite"></p>
+           </div>
+            
             <button type="button" class="nav-button" onclick="confirmarAsistencia()">
                 <i class="fas fa-paper-plane"></i> Confirmar
             </button>
