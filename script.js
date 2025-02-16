@@ -1,4 +1,3 @@
-
 // Inicializar Swiper
 const swiper = new Swiper('.mySwiper', {
     loop: true,
@@ -74,6 +73,37 @@ function buscarInvitado() {
     });
 }
 
+function seleccionarInvitado(invitado) {
+    document.getElementById("guestName").value = invitado.nombre;
+    document.getElementById("guestCount").value = "";
+    document.getElementById("errorMessage").style.display = "none";
+    maxAcompañantes = invitado.acompañantes;
+    document.getElementById("sugerencias").innerHTML = "";
+    document.getElementById("maxGuest").textContent = invitado.acompañantes;
+
+}
+
+function validarAcompañantes() {
+    const input = document.getElementById("guestCount");
+    const alert = document.getElementById("guestAlert");
+    const maxSpan = document.getElementById("maxGuest");
+    const alertText = document.getElementById("alertText");
+    
+    maxSpan.textContent = maxAcompañantes;
+    
+    let valor = parseInt(input.value);
+    
+    if (valor > maxAcompañantes) {
+        input.value = maxAcompañantes;
+        alertText.innerHTML = `¡Ups! Máximo permitido: <strong>${maxAcompañantes}</strong> Personas`;
+        alert.classList.add('visible');
+    } else if (valor < 1) {
+        alertText.textContent = "Debes confirmar al menos 1 persona ";
+        alert.classList.add('visible');
+    } else {
+        alert.classList.remove('visible');
+    }
+}
 
 function confirmarAsistencia() {
     const nombre = document.getElementById("guestName").value;
@@ -81,61 +111,7 @@ function confirmarAsistencia() {
     const messageDiv = document.getElementById("formMessage");
 
     if (!nombre || !invitados) {
-        messageDiv.textContent = "Por favor co// Función de selección de invitado MODIFICADA
-function seleccionarInvitado(invitado) {
-    const guestCountInput = document.getElementById("guestCount");
-    const errorMessage = document.getElementById("errorMessage");
-    const maxGuestSpan = document.getElementById("maxGuest");
-    
-    // Actualizar valores
-    document.getElementById("guestName").value = invitado.nombre;
-    guestCountInput.value = "";
-    guestCountInput.max = invitado.acompañantes;
-    maxAcompañantes = invitado.acompañantes;
-    
-    // Actualizar UI
-    errorMessage.textContent = "";
-    maxGuestSpan.textContent = maxAcompañantes;
-    document.getElementById("sugerencias").innerHTML = "";
-    
-    // Efecto visual de actualización
-    maxGuestSpan.classList.add('max-animation');
-    setTimeout(() => maxGuestSpan.classList.remove('max-animation'), 500);
-    
-    // Forzar validación
-    validarAcompañantes();
-}
-
-// Función de validación MODIFICADA
-function validarAcompañantes() {
-    const input = document.getElementById("guestCount");
-    const alert = document.getElementById("guestAlert");
-    const errorMessage = document.getElementById("errorMessage");
-    const currentMax = maxAcompañantes;
-    
-    let valor = parseInt(input.value) || 0;
-
-    input.setCustomValidity(''); // Limpiar validación HTML5
-    
-    if (valor > currentMax) {
-        input.value = currentMax;
-        input.setCustomValidity(`Máximo permitido: ${currentMax}`);
-        errorMessage.textContent = `¡Máximo ${currentMax} personas!`;
-        alert.classList.add('visible');
-    } else if (valor < 1) {
-        input.value = "";
-        input.setCustomValidity('Debes confirmar al menos 1 persona');
-        errorMessage.textContent = "Al menos 1 persona";
-        alert.classList.add('visible');
-    } else {
-        errorMessage.textContent = "";
-        alert.classList.remove('visible');
-    }
-    
-    // Actualizar mensaje en tiempo real
-    document.getElementById("maxGuest").textContent = currentMax;
-    input.reportValidity(); // Mostrar mensaje HTML5
-}mpleta todos los campos";
+        messageDiv.textContent = "Por favor completa todos los campos";
         messageDiv.style.color = "#d63384";
         return;
     }
@@ -285,7 +261,3 @@ document.body.addEventListener('click', () => {
         button.innerHTML = '⏸️ Pausar';
     }
 }, { once: true }); // Solo se ejecuta una vez
-
-
-
-
