@@ -834,3 +834,15 @@ countdown-header {
         right: -30px;
     }
 }
+
+
+/* Animación para cambio de máximo */
+.max-animation {
+    animation: maxChange 0.5s ease-in-out;
+}
+
+@keyframes maxChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); color: var(--verde-oliva); }
+    100% { transform: scale(1); }
+}
