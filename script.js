@@ -85,23 +85,21 @@ function seleccionarInvitado(invitado) {
 
 function validarAcompañantes() {
     const input = document.getElementById("guestCount");
-    const alert = document.getElementById("guestAlert");
-    const maxSpan = document.getElementById("maxGuest");
-    const alertText = document.getElementById("alertText");
-    
-    maxSpan.textContent = maxAcompañantes;
-    
-    let valor = parseInt(input.value);
-    
+    const errorMessage = document.getElementById("errorMessage");
+    const valor = parseInt(input.value);
+
+    if (isNaN(valor) || valor < 1) {
+        errorMessage.textContent = "Número inválido";
+        errorMessage.style.display = "block";
+        return;
+    }
+
     if (valor > maxAcompañantes) {
         input.value = maxAcompañantes;
-        alertText.innerHTML = `¡Ups! Máximo permitido: <strong>${maxAcompañantes}</strong> Personas`;
-        alert.classList.add('visible');
-    } else if (valor < 1) {
-        alertText.textContent = "Debes confirmar al menos 1 persona ";
-        alert.classList.add('visible');
+        errorMessage.textContent = `Máximo ${maxAcompañantes} Personas`;
+        errorMessage.style.display = "block";
     } else {
-        alert.classList.remove('visible');
+        errorMessage.style.display = "none";
     }
 }
 
