@@ -16,7 +16,7 @@ const swiper = new Swiper('.mySwiper', {
 
 
 // Nuevo Countdown mejorado
-const countdownDate = new Date('2025-03-15T18:00:00').getTime();
+const countdownDate = new Date('2025-12-18T18:00:00').getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
